@@ -1,6 +1,7 @@
 package com.mark.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -19,7 +20,8 @@ public class Estado implements Serializable {
     private Integer id;
     private String nome;
 
-    @JsonBackReference
+    //@JsonBackReference
+    @JsonIgnore
     @OneToMany(mappedBy = "estado")
     private List<Cidade> cidades=new ArrayList<>();
 

@@ -1,6 +1,7 @@
 package com.mark.domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mark.enums.EstadoPagamento;
 
 import javax.persistence.*;
@@ -18,7 +19,8 @@ public abstract class Pagamento implements Serializable {
     private Integer id;
     private Integer estado;
 
-    @JsonBackReference
+    //@JsonBackReference
+    @JsonIgnore
     @OneToOne
     @JoinColumn(name="pedido_id")
     @MapsId
